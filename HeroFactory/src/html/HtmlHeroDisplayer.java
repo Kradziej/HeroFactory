@@ -1,9 +1,11 @@
 package html;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
@@ -25,12 +27,11 @@ public class HtmlHeroDisplayer implements IHeroDisplayer  {
 		
 		
 		
-		JEditorPane html = new JEditorPane();
-		html.setEditable(false);
 		
 		
 			try {
-				html.setPage(new java.net.URL("MyHeroHTML.html"));
+				generateHTML(hero);
+				openWebpage("MyHeroHTML.html");
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -78,4 +79,12 @@ public class HtmlHeroDisplayer implements IHeroDisplayer  {
 	    out.write(builder.toString());
 	    out.close();
 }
+	
+	public static void openWebpage(String urlString) {
+	    try {
+	        Desktop.getDesktop().browse(new URL(urlString).toURI());
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	}
 	}
