@@ -4,5 +4,6 @@ public enum HeroType {
 	
 	PRINCESS,
 	KNIGHT,
-	KING;
+	KING,
+	MAGE;
 }
