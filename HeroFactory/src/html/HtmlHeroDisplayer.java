@@ -17,7 +17,6 @@ import hero.HeroType;
 public class HtmlHeroDisplayer implements IHeroDisplayer  {
 	
 	
-	
 
 	private String url;
 
