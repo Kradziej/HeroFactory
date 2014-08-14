@@ -2,12 +2,14 @@ package graphics;
 
 import factory.IHeroDisplayer;
 import hero.Hero;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -23,16 +25,18 @@ public class SwingHeroDisplayer extends JFrame implements IHeroDisplayer {
 	Hero hero;
 
 	@Override
-	public void show(Hero hero) {
+	public void show(Hero hero)  {
 
 		this.imageLoader(hero);
 		this.frame();
 
 	}
 
-	public void imageLoader(Hero hero) {
-		String imageUrl = "C:/Users/4/git/HeroFactory/HeroFactory/src/images/";
+	public void imageLoader(Hero hero)  {
+		String imageUrl = "images/";
 
+
+		
 		switch (hero.getType()) {
 		case PRINCESS:
 			imageUrl = imageUrl + "Princess.jpg";
@@ -49,7 +53,12 @@ public class SwingHeroDisplayer extends JFrame implements IHeroDisplayer {
 		}
 		name = ("Name of hero: " + hero.getName());
 		try {
-			image = ImageIO.read(new File(imageUrl));
+			try {
+				image = ImageIO.read(new File(this.getClass().getResource(imageUrl).toURI()));
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (IOException e) {
 			name = "There is no file";
 			e.printStackTrace();
