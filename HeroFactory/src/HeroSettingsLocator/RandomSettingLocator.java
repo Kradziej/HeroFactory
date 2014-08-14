@@ -31,8 +31,8 @@ public class RandomSettingLocator implements IHeroSettingsLocator {
 		listaImion.add("Stefan_Batory");
 		listaImion.add("Piotrek_Jan_Kucharowski");
 		listaImion.add("Kasia_Ga³¹Ÿ");
-		imie = listaImion.get(r.nextInt(listaImion.size()));
-		return imie;
+		return listaImion.get(r.nextInt(listaImion.size()));
+		
 	}
 
 }
