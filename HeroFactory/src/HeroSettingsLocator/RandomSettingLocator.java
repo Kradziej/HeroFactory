@@ -34,9 +34,5 @@ public class RandomSettingLocator implements IHeroSettingsLocator {
 		imie = listaImion.get(r.nextInt(listaImion.size()));
 		return imie;
 	}
-	/*
-	 * public String wylosujImie(){
-	 * losoweImie=listaImion.get(r.nextInt(listaImion.size()+1)); return
-	 * losoweImie; }
-	 */
+
 }
