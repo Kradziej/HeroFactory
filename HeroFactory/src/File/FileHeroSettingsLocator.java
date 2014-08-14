@@ -11,11 +11,12 @@ public class FileHeroSettingsLocator {
 	private Scanner x;
 	static String name;
 	static HeroType type;
+	static String fileName = "Imiona.txt";
 	
 	public HeroType getType() {
 		if (type == null) {
 			try {
-				x = new Scanner(new File("C:\\Users\\5\\Desktop\\Imiona.txt"));
+				x = new Scanner(new File(this.getClass().getResource("/images/" + fileName).toURI()));
 			} catch (Exception e) {
 				System.out.println("could not find a file");
 			}
@@ -29,7 +30,7 @@ public class FileHeroSettingsLocator {
 	public String getName() {
 		if (name == null) {
 			try {
-				x = new Scanner(new File("C:\\Users\\5\\Desktop\\Imiona.txt"));
+				x = new Scanner(new File(this.getClass().getResource("/images/" + fileName).toURI()));
 			} catch (Exception e) {
 				System.out.println("could not find a file");
 			}
