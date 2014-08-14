@@ -1,4 +1,4 @@
-package factory;
+package html;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 
+import factory.IHeroDisplayer;
 import hero.Hero;
 import hero.HeroType;
 
